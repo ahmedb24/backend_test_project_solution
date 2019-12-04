@@ -1,0 +1,46 @@
+# Routes
+
+
+
+GET        /drivers/:driverId/               controllers.DriverController.getDriver( driverId : String)
+
+DELETE     /drivers/:driverId/              controllers.DriverController.deleteDriver( driverId : String)
+
+#GET        /drivers/:driverId/               #controllers.DriverController.getDriverSelectDriver( driverId : String)
+
+POST       /drivers/                        controllers.DriverController.createDriver()
+
+
+
+
+GET        /carMaintenance/:carId/               controllers.CarMaintenanceController.getCar( carId : String)
+DELETE     /carMaintenance/:carId/               controllers.CarMaintenanceController.deleteCar( carId : String)
+
+
+POST       /carMaintenance/                        controllers.CarMaintenanceController.createCar()
+
+GET        /carSelectController/:driverId/:carType/               controllers.CarSelectController.selectCar( driverId : String, carType : String)
+
+DELETE       /carSelectController/:driverId/:carType/               controllers.CarSelectController.deselectCar( driverId : String, carType : String)
+
+GET        /driverSearchController/:driverId/:carType/:username/:onlineStatus/:licensePlate               controllers.DriverSearchController.driverSearch( driverId : String, carType : String, username : String, onlineStatus : String, licensePlate: String)
+
+
+GET        /                                 controllers.HomeController.index()
+
+
+
+# Swagger
+GET        /api-docs.json                    controllers.ApiHelpController.getResources
+GET        /api-docs.json/auth               controllers.ApiHelpController.getResource(path = "/auth")
+GET        /api-server/api-docs.json         controllers.ApiHelpController.getResources
+GET        /api-server/api-docs.json/auth    controllers.ApiHelpController.getResource(path = "/auth")
+GET        /docs                             controllers.HomeController.swagger()
+
+
+
+
+OPTIONS    /*all                             controllers.HomeController.preflight(all)
+# Map static resources from the /public folder to the /assets URL path
+GET        /api-server/assets/*file          controllers.Assets.at(path="/public", file)
+GET        /assets/*file                     controllers.Assets.at(path="/public", file)
