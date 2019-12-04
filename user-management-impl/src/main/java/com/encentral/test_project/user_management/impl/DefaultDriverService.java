@@ -57,7 +57,12 @@ public class DefaultDriverService implements DriverService {
         String onlineStatus = driverDO.getOnlineStatus();
         String str2 = "online";
        
-        Car car =(Car)jPAApi.em().createQuery("SELECT u FROM Car u " + "WHERE u.carType LIKE ?1").setParameter(1,carType).getSingleResult(); 
+        Car car = null;
+        try{
+            car =(Car)jPAApi.em().createQuery("SELECT u FROM Car u " + "WHERE u.carType LIKE ?1").setParameter(1,carType).getSingleResult(); 
+        } catch(NoResultException ex){
+            return null;
+        }
 
         boolean attached = car.getAttached();
     

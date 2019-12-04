@@ -23,7 +23,7 @@ GET        /carSelectController/:driverId/:carType/               controllers.Ca
 
 DELETE       /carSelectController/:driverId/:carType/               controllers.CarSelectController.deselectCar( driverId : String, carType : String)
 
-GET        /driverSearchController/:driverId/:carType/:username/:onlineStatus/:licensePlate               controllers.DriverSearchController.driverSearch( driverId : String, carType : String, username : String, onlineStatus : String, licensePlate: String)
+GET        /driverSearchController/:driverId/:carType/:username/:onlineStatus/               controllers.DriverSearchController.driverSearch( driverId : String, carType : String, username : String, onlineStatus : String)
 
 
 GET        /                                 controllers.HomeController.index()

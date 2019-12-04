@@ -35,7 +35,6 @@ public class DefaultCarMaintenanceService implements CarMaintenanceService {
     @Override
     public Car create(Car car) {
         car.setCarId(java.util.UUID.randomUUID().toString());
-        car.setDateCreated(new Date());
         jPAApi.em().persist(car);
         return car;
     }

@@ -28,5 +28,5 @@ public interface DriverService {
     
     JpaDriver deselectCar(String driverId, String carType) throws ResourceNotFound;
     
-    List<JpaDriver> findDriver(String driverId, String carType, String username, String onlineStatus, String licensePlate) throws ResourceNotFound;
+    List<JpaDriver> findDriver(String driverId, String carType, String username, String onlineStatus) throws ResourceNotFound;
 }

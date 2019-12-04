@@ -47,10 +47,10 @@ public class DriverSearchController extends Controller {
                 @ApiResponse(code = 200, message = "Done", response = DriverDTO.class)
             }
     )
-    public Result driverSearch(String driverId, String carType, String username, String onlineStatus, String licensePlate) {
+    public Result driverSearch(String driverId, String carType, String username, String onlineStatus) {
  
         try {
-            return ok(Json.toJson(DriverMapper.JpaDriverToDriverDTOJustDrivers(driverService.findDriver(driverId, carType, username, onlineStatus, licensePlate))));
+            return ok(Json.toJson(DriverMapper.JpaDriverToDriverDTOJustDrivers(driverService.findDriver(driverId, carType, username, onlineStatus))));
         } catch (ResourceNotFound ex) {
             return notFound(ex.getMessage());
         }
